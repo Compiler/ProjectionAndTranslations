@@ -2,18 +2,19 @@ package com.tran.core;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.Matrix4;
 
 public class Core extends ApplicationAdapter {
 	SpriteBatch batch;
 	OrthographicCamera camera;
 	ShapeRenderer shapeRenderer;
+	
+	
+	private VecEntity entity;	
+	
 	@Override
 	public void create () {
 		
@@ -27,6 +28,12 @@ public class Core extends ApplicationAdapter {
 		
 		shapeRenderer = new ShapeRenderer();
 		shapeRenderer.setAutoShapeType(true);
+		
+		
+		
+		
+		entity = new VecEntity(300, 200);
+		
 	}
 
 	@Override
@@ -50,11 +57,11 @@ public class Core extends ApplicationAdapter {
 		
 		
 		
-		//draws axis
 		shapeRenderer.begin();
 		
 		
 		
+		//draws axis
 		shapeRenderer.setColor(0.5f, 0.0f, 0.0f, 0.5f);
 		shapeRenderer.line(0, 5000, 0, -5000);
 		shapeRenderer.setColor(0.0f, 0.5f, 0.0f, 0.5f);
@@ -63,7 +70,7 @@ public class Core extends ApplicationAdapter {
 		
 		
 		
-		
+		entity.render(shapeRenderer);
 		shapeRenderer.end();
 	}
 	
