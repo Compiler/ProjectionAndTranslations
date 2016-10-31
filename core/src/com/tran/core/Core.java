@@ -12,9 +12,7 @@ import com.badlogic.gdx.math.Matrix4;
 
 public class Core extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
 	OrthographicCamera camera;
-	Matrix4 mat;
 	ShapeRenderer shapeRenderer;
 	@Override
 	public void create () {
@@ -25,14 +23,6 @@ public class Core extends ApplicationAdapter {
 		camera.translate(-Gdx.graphics.getWidth() / 2, -Gdx.graphics.getHeight() / 2);
 		
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-		mat = new Matrix4(new float[]{
-				-1f, 0.0f, 0.0f, .0f,
-				.0f, -1.0f, 0.0f, .0f,
-				.0f, 0.0f, 1.0f, .0f,
-				.0f, 0.0f, 0.0f, 1.0f,
-				
-		});
 		
 		
 		shapeRenderer = new ShapeRenderer();
@@ -44,26 +34,41 @@ public class Core extends ApplicationAdapter {
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
 		shapeRenderer.setProjectionMatrix(camera.combined);
+		
+		
+		
+		
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		
+		
+		
+		
 		batch.begin();
-		batch.draw(img, 100, 100);
+		
 		batch.end();
 		
 		
 		
 		//draws axis
 		shapeRenderer.begin();
-		shapeRenderer.setColor(Color.RED);
+		
+		
+		
+		shapeRenderer.setColor(0.5f, 0.0f, 0.0f, 0.5f);
 		shapeRenderer.line(0, 5000, 0, -5000);
-		shapeRenderer.setColor(Color.GREEN);
+		shapeRenderer.setColor(0.0f, 0.5f, 0.0f, 0.5f);
 		shapeRenderer.line(-5000, 0, 5000, 0);
+		
+		
+		
+		
+		
 		shapeRenderer.end();
 	}
 	
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 	}
 }
