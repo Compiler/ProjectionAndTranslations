@@ -13,7 +13,8 @@ public class Core extends ApplicationAdapter {
 	ShapeRenderer shapeRenderer;
 	
 	
-	private VecEntity entity;	
+	private VecEntity entity;
+	private ProjectionVisual proj;
 	
 	@Override
 	public void create () {
@@ -31,8 +32,8 @@ public class Core extends ApplicationAdapter {
 		
 		
 		
-		
-		entity = new VecEntity(300, 200);
+		proj = new ProjectionVisual(400, 200, -100, -300);
+		//entity = new VecEntity(300, 200);
 		
 	}
 
@@ -62,15 +63,16 @@ public class Core extends ApplicationAdapter {
 		
 		
 		//draws axis
-		shapeRenderer.setColor(0.5f, 0.0f, 0.0f, 0.5f);
+		shapeRenderer.setColor(0.25f, 0.30f, 0.30f, 0.15f);
 		shapeRenderer.line(0, 5000, 0, -5000);
-		shapeRenderer.setColor(0.0f, 0.5f, 0.0f, 0.5f);
+		shapeRenderer.setColor(0.30f, 0.25f, 0.30f, 0.15f);
 		shapeRenderer.line(-5000, 0, 5000, 0);
 		
 		
 		
 		
-		entity.render(shapeRenderer);
+		proj.render(shapeRenderer);
+		//entity.render(shapeRenderer);
 		shapeRenderer.end();
 	}
 	
