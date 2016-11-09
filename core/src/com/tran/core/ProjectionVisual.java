@@ -31,23 +31,24 @@ public class ProjectionVisual {
 
 		float division = projTop / projBottom;
 
-		projection = new Vector2(division * one.x, division * one.y);
+		projection = new Vector2(division * two.x, division * two.y);
 		//projection.x = -280;
 		//projection.y = -140;
+		
 		
 	}
 
 	float speed = 0.0f;
-
+	float error = 2f;
 	public void project() {
 			speed += 1 * Gdx.graphics.getDeltaTime();
-			if(one.x >= projection.x + 5 || one.x <= projection.x - 5) {
+			if(one.x >= projection.x + error || one.x <= projection.x - error) {
 				if(one.x < projection.x) {
 					one.x += speed;
 				} else
 					one.x -= speed;
 			}
-			if(one.y >= projection.y + 5 || one.y <= projection.y - 5) {
+			if(one.y >= projection.y + error || one.y <= projection.y - error) {
 				if(one.y < projection.y) {
 					one.y += speed;
 				} else
@@ -61,10 +62,11 @@ public class ProjectionVisual {
 		if(start)
 			project();
 		
-		System.out.println(one.x + ", " + one.y);
-		render.setColor(1f, 0.f, 0.0f, 10.5f);
+		System.out.println("One: " + one.x + ", " + one.y);
+		System.out.println("Proj: " + projection.x + ", " + projection.y);
+		render.setColor(1f, 0.5f, 0.0f, 10.5f);
 		render.line(0, 0, two.x, 0);
-		render.setColor(.0f, 1.0f, 0.f, 0.2f);
+		render.setColor(.50f, 1.0f, 0.f, 0.2f);
 		render.line(two.x, 0, two.x, two.y);
 		
 		render.setColor(1.0f, 1.0f, 0.0f, 0.2f);

@@ -32,8 +32,8 @@ public class Core extends ApplicationAdapter {
 		
 		
 		
-		proj = new ProjectionVisual(400, 200, -100, -300);
-		//entity = new VecEntity(300, 200);
+		proj = new ProjectionVisual(500, 300, -400, 200);
+		entity = new VecEntity(300, 200);
 		
 	}
 
@@ -71,8 +71,8 @@ public class Core extends ApplicationAdapter {
 		
 		
 		
-		proj.render(shapeRenderer);
-		//entity.render(shapeRenderer);
+		//proj.render(shapeRenderer);
+		entity.render(shapeRenderer);
 		shapeRenderer.end();
 	}
 	

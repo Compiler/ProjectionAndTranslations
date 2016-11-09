@@ -30,7 +30,7 @@ public class VecEntity {
 		}
 
 		if(go) {
-			speed += 10 * Gdx.graphics.getDeltaTime();
+			speed += 5 * Gdx.graphics.getDeltaTime();
 			if(pos.x >= newX + 5 || pos.x <= newX - 5) {
 				if(pos.x < newX) {
 					pos.x += speed;
