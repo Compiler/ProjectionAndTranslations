@@ -1,3 +1,9 @@
 # ProjectionAndTranslations
 
-This project very nicely visualizes how the transformations occur
+This project very nicely visualizes the math
+
+## Multiply a vector by mat for flip
+![ScreenShot](https://github.com/Compiler/ProjectionAndTranslations/blob/master/core/assets/matrot.gif)
+
+## Project a vector onto another vector
+![ScreenShot](https://github.com/Compiler/ProjectionAndTranslations/blob/master/core/assets/project.gif)
